@@ -1,0 +1,122 @@
+\hypertarget{e_8c}{}\section{e.\+c File Reference}
+\label{e_8c}\index{e.\+c@{e.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$mcrypt.\+h$>$}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$stdint.\+h$>$}\\*
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{e_8c_ade2c64525e5ae5a61497323a8cb25720}{R\+I\+J\+N\+D\+A\+E\+L\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+S\+I\+Z\+E}~16
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{e_8c_ac9a9cd9f8c4ea4b1f1e3f3912d6eec4d}{decodeblock} (unsigned char in\mbox{[}$\,$\mbox{]}, char $\ast$clrstr)
+\item 
+void \hyperlink{e_8c_a3782cb0f3973e26e62fe18f5bb5e17e5}{b64\+\_\+decode} (char $\ast$b64src, char $\ast$clrdst)
+\item 
+void \hyperlink{e_8c_a407220daaec087bd761c4ca62951a539}{encodeblock} (unsigned char in\mbox{[}$\,$\mbox{]}, char b64str\mbox{[}$\,$\mbox{]}, int len)
+\item 
+void \hyperlink{e_8c_a3280e9036d420f6b5fa25e0b8a596dca}{b64\+\_\+encode} (char $\ast$clrstr, char $\ast$b64dst)
+\item 
+int \hyperlink{e_8c_aef99a5b7916f4894726b40aeca423547}{encrypt} (void $\ast$buffer, int buffer\+\_\+len, char $\ast$I\+V, char $\ast$key, int key\+\_\+len)
+\item 
+int \hyperlink{e_8c_abec281891dc6908bb507c9ba5666a498}{decrypt} (void $\ast$buffer, int buffer\+\_\+len, char $\ast$I\+V, char $\ast$key, int key\+\_\+len)
+\item 
+int \hyperlink{e_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{e_8c_af02592e3434943498b685302c3bbf4ac}{b64} \mbox{[}$\,$\mbox{]} = \char`\"{}A\+B\+C\+D\+E\+F\+G\+H\+I\+J\+K\+L\+M\+N\+O\+P\+Q\+R\+S\+T\+U\+V\+W\+X\+Y\+Zabcdefghijklmnopqrstuvwxyz0123456789+/\char`\"{}
+\item 
+char \hyperlink{e_8c_a5f2f4aadca21bf65950db86472ffe393}{myb64} \mbox{[}1024\mbox{]} = \char`\"{}\char`\"{}
+\item 
+char \hyperlink{e_8c_ac35e7bf1954d9a5c1793153d58c8948c}{mydst} \mbox{[}1024\mbox{]} = \char`\"{}\char`\"{}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{e_8c_ade2c64525e5ae5a61497323a8cb25720}{}\index{e.\+c@{e.\+c}!R\+I\+J\+N\+D\+A\+E\+L\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+S\+I\+Z\+E@{R\+I\+J\+N\+D\+A\+E\+L\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+S\+I\+Z\+E}}
+\index{R\+I\+J\+N\+D\+A\+E\+L\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+S\+I\+Z\+E@{R\+I\+J\+N\+D\+A\+E\+L\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+S\+I\+Z\+E}!e.\+c@{e.\+c}}
+\subsubsection[{R\+I\+J\+N\+D\+A\+E\+L\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}\#define R\+I\+J\+N\+D\+A\+E\+L\+\_\+\+M\+A\+X\+\_\+\+I\+V\+\_\+\+S\+I\+Z\+E~16}\label{e_8c_ade2c64525e5ae5a61497323a8cb25720}
+
+
+\subsection{Function Documentation}
+\hypertarget{e_8c_a3782cb0f3973e26e62fe18f5bb5e17e5}{}\index{e.\+c@{e.\+c}!b64\+\_\+decode@{b64\+\_\+decode}}
+\index{b64\+\_\+decode@{b64\+\_\+decode}!e.\+c@{e.\+c}}
+\subsubsection[{b64\+\_\+decode(char $\ast$b64src, char $\ast$clrdst)}]{\setlength{\rightskip}{0pt plus 5cm}void b64\+\_\+decode (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{b64src, }
+\item[{char $\ast$}]{clrdst}
+\end{DoxyParamCaption}
+)}\label{e_8c_a3782cb0f3973e26e62fe18f5bb5e17e5}
+\hypertarget{e_8c_a3280e9036d420f6b5fa25e0b8a596dca}{}\index{e.\+c@{e.\+c}!b64\+\_\+encode@{b64\+\_\+encode}}
+\index{b64\+\_\+encode@{b64\+\_\+encode}!e.\+c@{e.\+c}}
+\subsubsection[{b64\+\_\+encode(char $\ast$clrstr, char $\ast$b64dst)}]{\setlength{\rightskip}{0pt plus 5cm}void b64\+\_\+encode (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{clrstr, }
+\item[{char $\ast$}]{b64dst}
+\end{DoxyParamCaption}
+)}\label{e_8c_a3280e9036d420f6b5fa25e0b8a596dca}
+\hypertarget{e_8c_ac9a9cd9f8c4ea4b1f1e3f3912d6eec4d}{}\index{e.\+c@{e.\+c}!decodeblock@{decodeblock}}
+\index{decodeblock@{decodeblock}!e.\+c@{e.\+c}}
+\subsubsection[{decodeblock(unsigned char in[], char $\ast$clrstr)}]{\setlength{\rightskip}{0pt plus 5cm}void decodeblock (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{in\mbox{[}$\,$\mbox{]}, }
+\item[{char $\ast$}]{clrstr}
+\end{DoxyParamCaption}
+)}\label{e_8c_ac9a9cd9f8c4ea4b1f1e3f3912d6eec4d}
+\hypertarget{e_8c_abec281891dc6908bb507c9ba5666a498}{}\index{e.\+c@{e.\+c}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!e.\+c@{e.\+c}}
+\subsubsection[{decrypt(void $\ast$buffer, int buffer\+\_\+len, char $\ast$\+I\+V, char $\ast$key, int key\+\_\+len)}]{\setlength{\rightskip}{0pt plus 5cm}int decrypt (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{buffer, }
+\item[{int}]{buffer\+\_\+len, }
+\item[{char $\ast$}]{I\+V, }
+\item[{char $\ast$}]{key, }
+\item[{int}]{key\+\_\+len}
+\end{DoxyParamCaption}
+)}\label{e_8c_abec281891dc6908bb507c9ba5666a498}
+\hypertarget{e_8c_a407220daaec087bd761c4ca62951a539}{}\index{e.\+c@{e.\+c}!encodeblock@{encodeblock}}
+\index{encodeblock@{encodeblock}!e.\+c@{e.\+c}}
+\subsubsection[{encodeblock(unsigned char in[], char b64str[], int len)}]{\setlength{\rightskip}{0pt plus 5cm}void encodeblock (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{in\mbox{[}$\,$\mbox{]}, }
+\item[{char}]{b64str\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{len}
+\end{DoxyParamCaption}
+)}\label{e_8c_a407220daaec087bd761c4ca62951a539}
+\hypertarget{e_8c_aef99a5b7916f4894726b40aeca423547}{}\index{e.\+c@{e.\+c}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!e.\+c@{e.\+c}}
+\subsubsection[{encrypt(void $\ast$buffer, int buffer\+\_\+len, char $\ast$\+I\+V, char $\ast$key, int key\+\_\+len)}]{\setlength{\rightskip}{0pt plus 5cm}int encrypt (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{buffer, }
+\item[{int}]{buffer\+\_\+len, }
+\item[{char $\ast$}]{I\+V, }
+\item[{char $\ast$}]{key, }
+\item[{int}]{key\+\_\+len}
+\end{DoxyParamCaption}
+)}\label{e_8c_aef99a5b7916f4894726b40aeca423547}
+\hypertarget{e_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}{}\index{e.\+c@{e.\+c}!main@{main}}
+\index{main@{main}!e.\+c@{e.\+c}}
+\subsubsection[{main()}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{e_8c_ae66f6b31b5ad750f1fe042a706a4e3d4}
+The Main funtion of this program No paramater of this function 
+
+\subsection{Variable Documentation}
+\hypertarget{e_8c_af02592e3434943498b685302c3bbf4ac}{}\index{e.\+c@{e.\+c}!b64@{b64}}
+\index{b64@{b64}!e.\+c@{e.\+c}}
+\subsubsection[{b64}]{\setlength{\rightskip}{0pt plus 5cm}char b64\mbox{[}$\,$\mbox{]} = \char`\"{}A\+B\+C\+D\+E\+F\+G\+H\+I\+J\+K\+L\+M\+N\+O\+P\+Q\+R\+S\+T\+U\+V\+W\+X\+Y\+Zabcdefghijklmnopqrstuvwxyz0123456789+/\char`\"{}}\label{e_8c_af02592e3434943498b685302c3bbf4ac}
+\hypertarget{e_8c_a5f2f4aadca21bf65950db86472ffe393}{}\index{e.\+c@{e.\+c}!myb64@{myb64}}
+\index{myb64@{myb64}!e.\+c@{e.\+c}}
+\subsubsection[{myb64}]{\setlength{\rightskip}{0pt plus 5cm}char myb64\mbox{[}1024\mbox{]} = \char`\"{}\char`\"{}}\label{e_8c_a5f2f4aadca21bf65950db86472ffe393}
+\hypertarget{e_8c_ac35e7bf1954d9a5c1793153d58c8948c}{}\index{e.\+c@{e.\+c}!mydst@{mydst}}
+\index{mydst@{mydst}!e.\+c@{e.\+c}}
+\subsubsection[{mydst}]{\setlength{\rightskip}{0pt plus 5cm}char mydst\mbox{[}1024\mbox{]} = \char`\"{}\char`\"{}}\label{e_8c_ac35e7bf1954d9a5c1793153d58c8948c}
