@@ -93,7 +93,7 @@ int encrypt(void* buffer, int buffer_len,char* IV, char* key, int key_len) {
 	int blocksize = mcrypt_enc_get_block_size(td);
 	printf("%d\n",blocksize);
 	printf("%d\n", buffer_len % blocksize);
-	//if( buffer_len % blocksize != 0 ){return 1;}
+	if( buffer_len % blocksize != 0 ){return 1;}
 
 	mcrypt_generic_init(td, key, key_len, IV);
 	mcrypt_generic(td, buffer, buffer_len);
@@ -108,9 +108,9 @@ int decrypt(void* buffer, int buffer_len, char* IV, char* key, int key_len) {
 	int blocksize = mcrypt_enc_get_block_size(td);
 	printf("%d\n",blocksize);
 	printf("%d\n", buffer_len % blocksize);
-//	if (buffer_len % blocksize != 0) {
-//		return 1;
-//	}
+	if (buffer_len % blocksize != 0) {
+		return 1;
+	}
 
 	mcrypt_generic_init(td, key, key_len, IV);
 	mdecrypt_generic(td, buffer, buffer_len);
@@ -132,7 +132,7 @@ int main() {
 
 	unsigned int msglen = strlen(messageSrc);
 	char* paddedMsg = NULL;
-	/*if (msglen % 16 != 0) {
+	if (msglen % 16 != 0) {
 		int padding = 16 - msglen % 16;
 		printf("condi=%d\n",padding);
 		paddedMsg = malloc(msglen + padding + 1);
@@ -140,7 +140,7 @@ int main() {
 		strncpy(paddedMsg, messageSrc, msglen);
 		printf("condi=%s\n",paddedMsg);
 		msglen = msglen + padding;
-	} else*/ {
+	} else {
 		paddedMsg = malloc(msglen + 1);
 		memset(paddedMsg, 0, msglen + 1);
 		strncpy(paddedMsg, messageSrc, msglen);
